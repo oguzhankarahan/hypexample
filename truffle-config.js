@@ -72,16 +72,16 @@ module.exports = {
     },
     mainnet: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.INFURA_MAINNET),
-      gasPrice: 1, // 100000000000
+      gasPrice: 100000000000,
       from: process.env.FROM,
       network_id: 1
-    }
+    },
     // Useful for private networks
-    // private: {
-    // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
-    // network_id: 2111,   // This network is yours, in the cloud.
-    // production: true    // Treats this network as if it was a public net. (default: false)
-    // }
+     hypernet: {
+      provider: () => new HDWalletProvider("candy maple cake sugar pudding cream honey rich smooth crumble sweet treat", "http://localhost:8545"),
+      network_id: 31337,   // This network is yours, in the cloud.
+      production: true    // Treats this network as if it was a public net. (default: false)
+     }
   },
 
   // Set default mocha options here, use special reporters etc.
